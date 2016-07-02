@@ -23,6 +23,12 @@ module.exports = function(grunt) {
       scripts: {
         files: '**/*.js',
         tasks: ['jshint']
+      },
+      html: {
+        files: ['**/*.html','**/*.css'],
+        options: {
+          livereload: true
+        }
       }
     },
     jshint: {
@@ -40,7 +46,6 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          keepalive: true,
           hostname: 'localhost',
           port: '8080',
           base: 'app/pages',
@@ -54,6 +59,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('default', ['watch', 'connect']);
+  grunt.registerTask('default', ['connect', 'watch']);
 
 };

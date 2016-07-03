@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/erintherad/search#readme",
   "dependencies": {
-    "algoliasearch": "^3.16.0",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-connect": "^0.11.2",
     "grunt-contrib-jshint": "^1.0.0",

@@ -1,20 +1,47 @@
 $(document).ready(function() {
-  var client = algoliasearch('N1ET6L5TKZ', '62d7a87aaa63342d0e4540448b53e8a5'),
-      index = client.initIndex('bestbuy_data'),
-      $input = $('input');
+  var search = instantsearch({
+    appId: 'N1ET6L5TKZ',
+    apiKey: '62d7a87aaa63342d0e4540448b53e8a5',
+    indexName: 'bestbuy_data',
+    searchFunction: function(helper) {
+      var searchResults = $('#hits');
+      if (helper.state.query === '') {
+        searchResults.hide();
+        return;
+      }
+      helper.search();
+      searchResults.show();
+    }
+  });
 
-  $input.keyup(function() {
-    index.search($input.val(), {
-      hitsPerPage: 10,
-      facets: '*'
-    }, searchCallback);
-  }).focus();
-});
+  search.addWidget(
+    instantsearch.widgets.searchBox({
+      container: '#search-box',
+      placeholder: 'Search for products...'
+    })
+  );
 
-function searchCallback(err, content) {
-  if (err) {
-    console.error(err);
-    return;
+  search.addWidget(
+    instantsearch.widgets.hits({
+      container: '#hits',
+      hitsPerPage: 8,
+      templates: {
+        item: getTemplate('hit'),
+        empty: getTemplate('no-results')
+      }
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: '#pagination-container'
+    })
+  );
+
+  search.start();
+
+  function getTemplate(templateName) {
+    return document.querySelector('#' + templateName + '-template').innerHTML;
   }
-  console.log(content);
-}
+
+});

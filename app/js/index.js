@@ -31,6 +31,29 @@ $(document).ready(function() {
       }
     })
   );
+  
+  search.addWidget(
+    instantsearch.widgets.menu({
+      container: '#categories',
+      attributeName: 'categories',
+      limit: 10,
+      templates: {
+        header: 'Categories'
+      }
+    })
+  );
+  
+  search.addWidget(
+    instantsearch.widgets.refinementList({
+      container: '#brands',
+      attributeName: 'brand',
+      operator: 'or',
+      limit: 10,
+      templates: {
+        header: 'Brands'
+      }
+    })
+  );
 
   search.addWidget(
     instantsearch.widgets.pagination({

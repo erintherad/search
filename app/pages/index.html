@@ -19,7 +19,8 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <h1>This is a nav menu</h1>
+          <div id="categories"></div>
+          <div id="brands"></div>
         </div>
         <div class="col-md-8">
           <div id="hits"></div>
@@ -30,14 +31,14 @@
     
     <!-- TEMPLATES -->
     <script type="text/html" id="hit-template">
-      <div class="hit col-md-3">
+      <div class="hit hit-container">
         <div class="hit-image">
-          <img src="{{image}}" alt="{{name}}">
+          <a href={{url}}><img class="img-responsive" src="{{image}}" alt="{{name}}"></a>
         </div>
         <div class="hit-content">
           <h3 class="hit-price">${{price}}</h3>
           <h2 class="hit-name">{{{_highlightResult.name.value}}}</h2>
-          <p class="hit-description">{{{_highlightResult.description.value}}}</p>
+          <p class="hit-description">{{description}}</p>
         </div>
       </div>
     </script>

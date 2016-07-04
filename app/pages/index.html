@@ -10,10 +10,10 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 text-center">
-          <div class="form-group search-container">
+        <div class="col-md-12 text-center search-container">
+          <div class="form-group">
             <label>What are you searching for today?</label>
-            <input class="form-control" type="input" id="search-box">
+            <input class="form-control search-input" type="input" id="search-box">
           </div>
         </div>
       </div>
@@ -26,11 +26,9 @@
         </div>
         <div class="col-md-8">
           <div class="col-md-12 hits-filters">
-            <div class="col-md-6">
-              <div id="sort-by-container" class="pull-left"></div>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div id="pagination-container" class="pull-right"></div>
+              <div id="sort-by-container" class="pull-right"></div>
             </div>
           </div>
           <div class="col-md-12 hits-display">

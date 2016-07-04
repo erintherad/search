@@ -10,21 +10,32 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 text-center">
-          <div class="form-group">
+        <div class="col-md-12 text-center">
+          <div class="form-group search-container">
             <label>What are you searching for today?</label>
             <input class="form-control" type="input" id="search-box">
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
-          <div id="categories"></div>
+        <div class="col-md-4 search-filters">
+          <div id="hierarchical-categories"></div>
           <div id="brands"></div>
+          <div id="price"></div>
+          <div id="clear-all"></div>
         </div>
         <div class="col-md-8">
-          <div id="hits"></div>
-          <div id="pagination-container"></div>
+          <div class="col-md-12 hits-filters">
+            <div class="col-md-6">
+              <div id="sort-by-container" class="pull-left"></div>
+            </div>
+            <div class="col-md-6">
+              <div id="pagination-container" class="pull-right"></div>
+            </div>
+          </div>
+          <div class="col-md-12 hits-display">
+            <div id="hits"></div>
+          </div>
         </div>
       </div>
     </div>

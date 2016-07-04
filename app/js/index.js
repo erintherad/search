@@ -33,12 +33,14 @@ $(document).ready(function() {
   );
   
   search.addWidget(
-    instantsearch.widgets.menu({
-      container: '#categories',
-      attributeName: 'categories',
-      limit: 10,
+    instantsearch.widgets.hierarchicalMenu({
+      container: '#hierarchical-categories',
+      collapsible: {
+        collapsed: true
+      },
+      attributes: ['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2'],
       templates: {
-        header: 'Categories'
+        header: 'Hierarchical categories'
       }
     })
   );
@@ -51,10 +53,52 @@ $(document).ready(function() {
       limit: 10,
       templates: {
         header: 'Brands'
+      },
+      collapsible: {
+        collapsed: true
       }
     })
   );
-
+  
+  search.addWidget(
+    instantsearch.widgets.priceRanges({
+      container: '#price',
+      attributeName: 'price',
+      labels: {
+        currency: '$',
+        separator: 'to',
+        button: 'Go'
+      },
+      templates: {
+        header: 'Price'
+      },
+      collapsible: {
+        collapsed: true
+      }
+    })
+  );
+  
+  search.addWidget(
+    instantsearch.widgets.clearAll({
+      container: '#clear-all',
+      templates: {
+        link: 'Reset everything'
+      },
+      autoHideContainer: false
+    })
+  );
+  
+  search.addWidget(
+    instantsearch.widgets.sortBySelector({
+      container: '#sort-by-container',
+      indices: [
+        {name: 'bestbuy_data', label: 'Most relevant'},
+        {name: 'bestbuy_data_price_asc', label: 'Lowest price'},
+        {name: 'bestbuy_data_price_desc', label: 'Highest price'}
+      ]
+    })
+  );
+  
   search.addWidget(
     instantsearch.widgets.pagination({
       container: '#pagination-container'

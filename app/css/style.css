@@ -1,2 +1,2 @@
-html,body{width:100%}.hit-container{width:100%;height:25%}.hit-container .hit-price{font-size:1.2em}.hit-container .hit-name{font-size:1.2em}.hit-container .hit-description{font-size:.8em}
+html,body{width:100%}.search-container{position:fixed;width:100%}.search-filters{position:fixed;width:25%;margin-top:100px}.hits-filters{position:fixed;width:75%;margin-top:100px;margin-left:340px}.hits-display{margin-left:25%;margin-top:200px}#hits .hit-container{width:100%;height:25%}#hits .hit-container .hit-price{font-size:1.2em}#hits .hit-container .hit-name{font-size:1.2em}#hits .hit-container .hit-description{font-size:.8em}
 /*# sourceMappingURL=style.css.map */

@@ -40,7 +40,7 @@ $(document).ready(function() {
       },
       attributes: ['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2'],
       templates: {
-        header: 'Hierarchical categories'
+        header: 'CATEGORIES'
       }
     })
   );
@@ -52,7 +52,7 @@ $(document).ready(function() {
       operator: 'or',
       limit: 10,
       templates: {
-        header: 'Brands'
+        header: 'BRANDS'
       },
       collapsible: {
         collapsed: true
@@ -70,7 +70,7 @@ $(document).ready(function() {
         button: 'Go'
       },
       templates: {
-        header: 'Price'
+        header: 'PRICE'
       },
       collapsible: {
         collapsed: true
@@ -82,7 +82,7 @@ $(document).ready(function() {
     instantsearch.widgets.clearAll({
       container: '#clear-all',
       templates: {
-        link: 'Reset everything'
+        link: 'RESET EVERYTHING'
       },
       autoHideContainer: false
     })

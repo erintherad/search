@@ -1,12 +1,17 @@
 $background: #FCFCFC;
-// $background: red;
 $hitContainerColor: #FFF;
 $filterCategoryColor: #252525;
+
+@font-face {
+  font-family: 'global-font';
+  src: url('/fonts/bodyFont.ttf');
+}
 
 html, 
 body {
   width: 100%;
   background-color: $background;
+  font-family: 'global-font', 'Helvetica', sans-serif;
 }
   .search-container {
     position: fixed;

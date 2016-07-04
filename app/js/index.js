@@ -47,6 +47,10 @@ $(document).ready(function() {
       },
       collapsible: {
         collapsed: true
+      },
+      cssClasses: {
+        list: ['filter-list', 'checkbox'],
+        item: 'filter-list-item'
       }
     })
   );
@@ -65,6 +69,12 @@ $(document).ready(function() {
       },
       collapsible: {
         collapsed: true
+      },
+      cssClasses: {
+        list: 'filter-list',
+        item: 'filter-list-item',
+        button: ['btn', 'btn-primary', 'btn-sm'],
+        input: 'price-input'
       }
     })
   );
@@ -76,17 +86,6 @@ $(document).ready(function() {
         link: '<span class="glyphicon glyphicon-refresh"></span> Reset Filters'
       },
       autoHideContainer: false
-    })
-  );
-  
-  search.addWidget(
-    instantsearch.widgets.sortBySelector({
-      container: '#sort-by-container',
-      indices: [
-        {name: 'bestbuy_data', label: 'Most relevant'},
-        {name: 'bestbuy_data_price_asc', label: 'Lowest price'},
-        {name: 'bestbuy_data_price_desc', label: 'Highest price'}
-      ]
     })
   );
   

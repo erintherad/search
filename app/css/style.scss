@@ -16,6 +16,7 @@ $bestBuyBlue: #0275D8;
     text-decoration: none;
     &:visited {
       color: $bestBuyBlue;
+      text-decoration: none; 
     }
     &:hover {
       color: $bestBuyBlue;
@@ -23,11 +24,13 @@ $bestBuyBlue: #0275D8;
     }
     &:active {
       color: $bestBuyBlue;
+      text-decoration: none; 
     }
   }
 }
 
 @mixin input {
+  color: $filterCategoryFontColor;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -56,12 +59,11 @@ body {
     background-color: $background;
     .search-input {
       @include input;
-      width: 100%;
-      right: 23%;
-      top: -10px;
-      padding-bottom: 15px;
-      font-size: 2.2em;
-      text-align: right;
+      width: 40%;
+      margin-left: 16%;
+      top: -5px;
+      height: 2.5em;
+      font-size: 2.2em
     }
     .glyphicon {
       position: absolute;
@@ -88,17 +90,21 @@ body {
       font-size: 1.2em;
       border-bottom: 1px solid #EFEFEF;
     }
+    .category-list {
+      text-transform: uppercase;
+    }
     .ais-hierarchical-menu--item {
       @include link;
       background-color: $filterCategoryItemColor;
       padding: 15px;
-      font-size: 1em;
+      font-size: .9em;
       border-bottom: 1px solid #EFEFEF;
     }
     .filter-list {
       margin-top: 15px;
       margin-bottom: 15px;
       .filter-list-item {
+        color: $filterCategoryFontColor;
         padding-bottom: 5px;
         padding-left: 15px;
       }
@@ -108,13 +114,16 @@ body {
       width: 80%;
     }
     .btn-sm {
-      margin-left: 30%;
+      margin-top: 10px;
+      margin-left: 35%;
+      background-color: $bestBuyBlue;
+      border: none;
     }
     #clear-all {
       margin-top: 20px;
     }
     .glyphicon-refresh {
-      margin-left: 20%;
+      margin-left: 15%;
     }
   }
   .hits-filters {

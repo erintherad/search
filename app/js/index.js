@@ -8,7 +8,7 @@ $(document).ready(function() {
   search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-box',
-      placeholder: 'Search for a product...'
+      placeholder: 'SEARCH FOR A PRODUCT...'
     })
   );
 
@@ -32,6 +32,9 @@ $(document).ready(function() {
       attributes: ['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2'],
       templates: {
         header: 'CATEGORIES'
+      },
+      cssClasses: {
+        list: 'category-list'
       }
     })
   );
@@ -83,7 +86,7 @@ $(document).ready(function() {
     instantsearch.widgets.clearAll({
       container: '#clear-all',
       templates: {
-        link: '<span class="glyphicon glyphicon-refresh"></span> Reset Filters'
+        link: '<span class="glyphicon glyphicon-refresh"></span> RESET FILTERS'
       },
       autoHideContainer: false
     })

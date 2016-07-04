@@ -17,7 +17,7 @@ $(document).ready(function() {
   search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-box',
-      placeholder: 'Search for products...'
+      placeholder: 'Search for a product...'
     })
   );
 

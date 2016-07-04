@@ -3,15 +3,6 @@ $(document).ready(function() {
     appId: 'N1ET6L5TKZ',
     apiKey: '62d7a87aaa63342d0e4540448b53e8a5',
     indexName: 'bestbuy_data',
-    searchFunction: function(helper) {
-      var searchResults = $('#hits');
-      if (helper.state.query === '') {
-        searchResults.hide();
-        return;
-      }
-      helper.search();
-      searchResults.show();
-    }
   });
 
   search.addWidget(
@@ -24,7 +15,7 @@ $(document).ready(function() {
   search.addWidget(
     instantsearch.widgets.hits({
       container: '#hits',
-      hitsPerPage: 8,
+      hitsPerPage: 10,
       templates: {
         item: getTemplate('hit'),
         empty: getTemplate('no-results')
@@ -36,7 +27,7 @@ $(document).ready(function() {
     instantsearch.widgets.hierarchicalMenu({
       container: '#hierarchical-categories',
       collapsible: {
-        collapsed: true
+        collapsed: false
       },
       attributes: ['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2'],
       templates: {
@@ -82,7 +73,7 @@ $(document).ready(function() {
     instantsearch.widgets.clearAll({
       container: '#clear-all',
       templates: {
-        link: 'RESET EVERYTHING'
+        link: '<span class="glyphicon glyphicon-refresh"></span> Reset Filters'
       },
       autoHideContainer: false
     })

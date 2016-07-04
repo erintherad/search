@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'app/css/style.css': 'app/css/style.scss'
+          'css/style.css': 'css/style.scss'
         }
       } 
     },
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'app/js/*.js'],
+      files: ['Gruntfile.js', 'js/*.js'],
       options: {
         // options here to override JSHint defaults
         globals: {
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         options: {
           hostname: 'localhost',
           port: '8080',
-          base: 'app',
+          base: '.',
           livereload: true
         }
       }

@@ -31,7 +31,19 @@ $(document).ready(function() {
       },
       attributes: ['hierarchicalCategories.lvl0', 'hierarchicalCategories.lvl1', 'hierarchicalCategories.lvl2'],
       templates: {
-        header: 'CATEGORIES'
+        header: 'CATEGORIES',
+        item: function(item) {
+          return '<div>' +
+        '<div>' +
+          '<a class="ais-hierarchical-menu--link" href="#">' +
+            item.name +
+            '<span class="ais-hierarchical-menu--count">' +
+              '  (' + item.count + ')' +
+            '</span>' +
+          '</a>' +
+        '</div>' +
+      '</div>';
+        }
       },
       cssClasses: {
         list: 'category-list'

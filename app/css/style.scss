@@ -100,9 +100,18 @@ body {
       font-size: .9em;
       border-bottom: 1px solid #EFEFEF;
     }
+    .ais-refinement-list--label {
+      // for right-aligned counts
+      display: block;
+    }
+    .ais-refinement-list--count {
+      float: right;
+      padding-right: 15px; 
+    }
     .filter-list {
-      margin-top: 15px;
-      margin-bottom: 15px;
+      background-color: $filterCategoryItemColor;
+      padding-top: 15px;
+      padding-bottom: 15px;
       .filter-list-item {
         color: $filterCategoryFontColor;
         padding-bottom: 5px;
